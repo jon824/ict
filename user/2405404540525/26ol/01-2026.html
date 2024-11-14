@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<!--=== Coding by CodingLab | www.codinglabweb.com === -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!----======== CSS ======== -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="user.css">
+     
+    <!----===== Iconscout CSS ===== -->
+    
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+    <!--Cources -->
+    <link href="bootstrap.min.css" rel="stylesheet">
+ <!-- Libraries Stylesheet -->
+ <link href="lib/animate/animate.min.css" rel="stylesheet">
+ <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <title>Admin Dashboard Panel</title> 
+</head>
+<body>
+    <nav>
+      
+
+        <div class="menu-items">
+            <ul class="nav-links">
+                <li><a href="/450450450450.html">
+                    <i class="uil uil-home"></i>
+ 
+                     <span class="link-name">Home  </span>
+                 </a></li>
+                 <li><a href="/cource.html">
+                    <i class="uil uil-book"></i>
+ 
+                     <span class="link-name">Cources  </span>
+                 </a></li>
+                <li><a href="/index.html">
+                    <i class="uil uil-signout"></i>
+ 
+                     <span class="link-name">Log out  </span>
+                 </a></li>
+                
+                
+                
+
+                <div class="mode-toggle">
+                </div>
+            </li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="dashboard">
+      
+            
+          
+            
+
+            <div class="top">
+             <i class="uil uil-bars sidebar-toggle"></i>
+
+
+<div class="notification">
+  <!-- Notification Bell Icon -->
+  <i class="uil uil-bell bell"></i>
+
+  <!-- Notification Count -->
+  <div class="notification-count">5</div> <!-- Hardcoded for now -->
+
+  <!-- Notification List -->
+  <ul class="notification-list">
+    <li>Your Account Has been Verified</li>
+    <li>Your Id Verified</li>
+    <li>Your Face Id Verified</li>
+    <li>Your Money Deposit Is Succeed</li>
+    <li>Withdraw Successful</li>
+  </ul>
+</div>
+
+<!-- Add script to handle notification toggle -->
+<script>
+  // Toggle notification list on bell click
+  const bell = document.querySelector('.bell');
+  const notificationList = document.querySelector('.notification-list');
+  const notificationCount = document.querySelector('.notification-count');
+  
+  bell.addEventListener('click', () => {
+    notificationList.classList.toggle('show');
+
+    // Optionally: Reset notification count when clicked
+    notificationCount.textContent = 0;
+    notificationCount.style.display = 'none'; // Hide the count when all notifications are viewed
+  });
+
+  // Optional: Hide the notification list if clicked outside
+  window.addEventListener('click', (e) => {
+    if (!bell.contains(e.target) && !notificationList.contains(e.target)) {
+      notificationList.classList.remove('show');
+    }
+  });
+
+  // Set the notification count dynamically based on the number of notifications
+  function updateNotificationCount() {
+    const notifications = document.querySelectorAll('.notification-list li');
+    const count = notifications.length;
+
+    // Update the notification count display
+    notificationCount.textContent = count;
+
+    // If there are no notifications, hide the count badge
+    if (count > 0) {
+      notificationCount.style.display = 'flex';
+    } else {
+      notificationCount.style.display = 'none';
+    }
+  }
+
+  // Call this function to initially set the notification count
+  updateNotificationCount();
+</script>
+
+            </div>
+
+        <div class="dash-content">
+            <div class="overview">
+                <div class="title">
+                    <i class="uil uil-book"></i>
+                    <span class="text">2026 O/L Lesson Pack</span>
+                </div>
+
+               
+
+           <!-- Courses Start -->
+    <div class="container-xxl py-5">
+      <div class="container">
+          <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+              <h6 class="section-title bg-white text-center px-3">  Lesson</h6>
+          </div>
+          <div class="row g-4 py-2">
+              <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                  <div class="course-item shadow">
+                      <div class="position-relative overflow-hidden text-light image">
+                          <img class="img-fluid" src="img/course-1.jpg" alt="">
+                          <div style="position:absolute;top: 15px;left: 16px; font-size:12px; border-radius:3px; background-color:#00ff22;"
+                              class="px-2 py-1 fw-bold text-uppercase">PAID</div>
+
+                      </div>
+                      <div class="p-2 pb-0">
+
+                          <h5 class="mb-1"><a href="1/01-month.html" class="text-dark">
+                            <span class="textss">
+                          January
+                            </a> </h5></span>
+                      </div>
+                      <div class="d-flex">
+                          
+                      </div>
+                      <div class="d-flex">
+                          <small class="flex-fill text-left p-2 px-2"><i class="fa fa-clock me-2"></i>2.0
+                              H</small>
+                          <small class="py-1 px-2 fw-bold fs-6 text-center"><i class="fas fa-rupee-sign"></i> 10</small>
+                          <small class=" text-primary py-1 px-2 fw-bold fs-6" style="float:right;"><a href="1/01-month.html">Enroll
+                                  Now </a><i class="fa fa-chevron-right me-2 fs-10"></i></small>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="course-item shadow">
+                    <div class="position-relative overflow-hidden text-light image">
+                        <img class="img-fluid" src="img/course-1.jpg" alt="">
+                        <div style="position:absolute;top: 15px;left: 16px; font-size:12px; border-radius:3px; background-color:#00ff22;"
+                            class="px-2 py-1 fw-bold text-uppercase">PAID</div>
+
+                    </div>
+                    <div class="p-2 pb-0">
+
+                        <h5 class="mb-1"><a href="#" class="text-dark">February</a> </h5>
+                    </div>
+                    <div class="d-flex">
+                        
+                    </div>
+                    <div class="d-flex">
+                        <small class="flex-fill text-left p-2 px-2"><i class="fa fa-clock me-2"></i>2.0
+                            H</small>
+                        <small class="py-1 px-2 fw-bold fs-6 text-center"><i class="fas fa-rupee-sign"></i> 10</small>
+                        <small class=" text-primary py-1 px-2 fw-bold fs-6" style="float:right;"><a href="#">Enroll
+                                Now </a><i class="fa fa-chevron-right me-2 fs-10"></i></small>
+                    </div>
+                </div>
+            </div> <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+              <div class="course-item shadow">
+                  <div class="position-relative overflow-hidden text-light image">
+                      <img class="img-fluid" src="img/course-1.jpg" alt="">
+                      <div style="position:absolute;top: 15px;left: 16px; font-size:12px; border-radius:3px; background-color:#00ff22;"
+                          class="px-2 py-1 fw-bold text-uppercase">PAID</div>
+
+                  </div>
+                  <div class="p-2 pb-0">
+
+                      <h5 class="mb-1"><a href="#" class="text-dark">March</a> </h5>
+                  </div>
+                  <div class="d-flex">
+                      
+                  </div>
+                  <div class="d-flex">
+                      <small class="flex-fill text-left p-2 px-2"><i class="fa fa-clock me-2"></i>2.0
+                          H</small>
+                      <small class="py-1 px-2 fw-bold fs-6 text-center"><i class="fas fa-rupee-sign"></i> 10</small>
+                      <small class=" text-primary py-1 px-2 fw-bold fs-6" style="float:right;"><a href="#">Enroll
+                              Now </a><i class="fa fa-chevron-right me-2 fs-10"></i></small>
+                  </div>
+              </div>
+        
+  </div> <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+    <div class="course-item shadow">
+        <div class="position-relative overflow-hidden text-light image">
+            <img class="img-fluid" src="img/course-1.jpg" alt="">
+            <div style="position:absolute;top: 15px;left: 16px; font-size:12px; border-radius:3px; background-color:#fb873f;"
+                class="px-2 py-1 fw-bold text-uppercase">PAID</div>
+
+        </div>
+        <div class="p-2 pb-0">
+
+            <h5 class="mb-1"><a href="#" class="text-dark"> April</a> </h5>
+        </div>
+        <div class="d-flex">
+            
+        </div>
+        <div class="d-flex">
+            <small class="flex-fill text-left p-2 px-2"><i class="fa fa-clock me-2"></i>2.0
+                H</small>
+            <small class="py-1 px-2 fw-bold fs-6 text-center"><i class="fas fa-rupee-sign"></i> 10</small>
+            <small class=" text-primary py-1 px-2 fw-bold fs-6" style="float:right;"><a href="#">Enroll
+                    Now </a><i class="fa fa-chevron-right me-2 fs-10"></i></small>
+        </div>
+    </div>
+</div><div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+    <div class="course-item shadow">
+        <div class="position-relative overflow-hidden text-light image">
+            <img class="img-fluid" src="img/course-1.jpg" alt="">
+            <div style="position:absolute;top: 15px;left: 16px; font-size:12px; border-radius:3px; background-color:#fb873f;"
+                class="px-2 py-1 fw-bold text-uppercase">FREE</div>
+
+        </div>
+        <div class="p-2 pb-0">
+
+            <h5 class="mb-1"><a href="#" class="text-dark"> May</a> </h5>
+        </div>
+        <div class="d-flex">
+            
+        </div>
+        <div class="d-flex">
+            <small class="flex-fill text-left p-2 px-2"><i class="fa fa-clock me-2"></i>2.0
+                H</small>
+            <small class="py-1 px-2 fw-bold fs-6 text-center"><i class="fas fa-rupee-sign"></i> 10</small>
+            <small class=" text-primary py-1 px-2 fw-bold fs-6" style="float:right;"><a href="#">Enroll
+                    Now </a><i class="fa fa-chevron-right me-2 fs-10"></i></small>
+        </div>
+    </div>
+</div><div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+    <div class="course-item shadow">
+        <div class="position-relative overflow-hidden text-light image">
+            <img class="img-fluid" src="img/course-1.jpg" alt="">
+            <div style="position:absolute;top: 15px;left: 16px; font-size:12px; border-radius:3px; background-color:#fb873f;"
+                class="px-2 py-1 fw-bold text-uppercase">FREE</div>
+
+        </div>
+        <div class="p-2 pb-0">
+
+            <h5 class="mb-1"><a href="#" class="text-dark"> June</a> </h5>
+        </div>
+        <div class="d-flex">
+            
+        </div>
+        <div class="d-flex">
+            <small class="flex-fill text-left p-2 px-2"><i class="fa fa-clock me-2"></i>2.0
+                H</small>
+            <small class="py-1 px-2 fw-bold fs-6 text-center"><i class="fas fa-rupee-sign"></i> 10</small>
+            <small class=" text-primary py-1 px-2 fw-bold fs-6" style="float:right;"><a href="#">Enroll
+                    Now </a><i class="fa fa-chevron-right me-2 fs-10"></i></small>
+        </div>
+    </div>
+</div>
+                  </div>
+              </div>
+          </div>
+
+      </div>
+  
+  <!-- Courses End -->
+            </div>
+        
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

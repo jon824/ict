@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Custom CSS file link -->
+    <link rel="stylesheet" href="login/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        /* Style for the tag-like buttons */
+        .payment-form-group-radio {
+            display: flex;
+            gap: 10px;
+        }
+
+        .payment-form-radio-item {
+            padding: 10px 20px;
+            border: 2px solid #ccc;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .payment-form-radio-item.selected {
+            background-color: #007bff;
+            color: white;
+            border-color: #007bff;
+        }
+
+        .payment-form-radio-item:hover {
+            background-color: #f0f0f0;
+        }
+
+        .payment-form-radio-item.selected:hover {
+            background-color: #0056b3;
+        }
+
+        input[type="radio"] {
+            display: none;
+        }
+
+        /* for Ol and Al  */
+        .payment-form-group-radio {
+            display: flex;
+            gap: 10px;
+        }
+
+        .payment-form-radio-items {
+            padding: 10px 20px;
+            border: 2px solid #ccc;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .payment-form-radio-items.selected {
+            background-color: #007bff;
+            color: white;
+            border-color: #007bff;
+        }
+
+        .payment-form-radio-items:hover {
+            background-color: #f0f0f0;
+        }
+
+        .payment-form-radio-items.selected:hover {
+            background-color: #0056b3;
+        }
+
+        input[type="radio"] {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <form id="registration-form" action="https://smartforms.dev/submit/66ba147e5df1517d48d924e7" method="POST" onsubmit="return validateForm()">
+
+        <div class="row">
+
+            <div class="col">
+
+                <h3 class="title">Register</h3>
+
+                <div class="inputBox" >
+                    <span>
+                        <i class="fas fa-user"></i> Name :</span>
+                    <input type="text" name="Name" placeholder="John Deo" required>
+                </div>
+                <div class="inputBox">
+                    <span><i class="fas fa-phone"></i> Telegram Number :</span>
+                    <input type="number" name="phone number" placeholder="0764715368" required>
+                </div>
+                <div class="inputBox">
+                    <span><i class="fas fa-lock"></i> Password :</span>
+                    <input type="password" name="password" placeholder="Strong" required>
+                </div>
+                <div class="inputBox">
+                    <span><i class="fas fa-phone"></i> Email :</span>
+                    <input type="email" name="email" placeholder="admin@gmail.com" required>
+                </div>
+                
+
+            </div>
+
+            <div class="col">
+
+                <div class="inputBox">
+                    <span><i class="fas fa-map-marker-alt"></i> Address:</span>
+                    <input type="text" name="address" placeholder="room - street - locality" required>
+                </div>
+               
+                <div class="inputBox">
+                    <span><i class="fas fa-city"></i> City :</span>
+                    <input type="text" name="city" placeholder="colombo" required>
+                </div>
+                
+                <div class="inputBox">
+                    <span><i class="fas fa-id-card"></i> ID number :</span>
+                    <input type="text" name="ID" placeholder="197419202757V" required>
+                </div>
+
+                <!-- Year register as Tag Buttons -->
+                <div class="payment-form-group">
+                    <label class="payment-form-label payment-form-label-required required"></label>
+                    <div class="payment-form-group-radio">
+                        <input type="radio" id="year2026" name="YearRegister" value="2026">
+                        <label for="year2026" class="payment-form-radio-item">2026</label>
+                        <input type="radio" id="year2025" name="YearRegister" value="2025">
+                        <label for="year2025" class="payment-form-radio-item">2025</label>
+                        <input type="radio" id="year2024" name="YearRegister" value="2024">
+                        <label for="year2024" class="payment-form-radio-item">2024</label>
+                    </div>
+                </div><br>
+                
+                <!-- O/L or A/L Selection -->
+                <div class="payment-form-group">
+                    <label class="payment-form-label payment-form-label-required required"></label>
+                    <div class="payment-form-group-radio">
+                        <input type="radio" id="ol" name="OlAlRegister" value="O/L">
+                        <label for="ol" class="payment-form-radio-items">O/L</label>
+                        <input type="radio" id="al" name="OlAlRegister" value="A/L">
+                        <label for="al" class="payment-form-radio-items">A/L</label>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <input type="submit" value="Register" class="submit-btn">
+        <a href="index.html">
+            <input type="button" value="Login" class="submit-btn">
+        </a>
+    </form>
+
+    <script>
+        // JavaScript to ensure both selections are made
+        function validateForm() {
+            const yearSelection = document.querySelector('input[name="YearRegister"]:checked');
+            const olAlSelection = document.querySelector('input[name="OlAlRegister"]:checked');
+            
+            if (!yearSelection || !olAlSelection) {
+                alert("Please select both a year and an O/L or A/L option.");
+                return false;  // Prevent form submission
+            }
+            return true;  // Allow form submission
+        }
+
+        // Add a "selected" class when a radio button is clicked (for visual indication)
+        document.querySelectorAll('.payment-form-radio-item').forEach(item => {
+            item.addEventListener('click', function() {
+                let radioButton = this.previousElementSibling;
+                if (!radioButton.checked) {
+                    radioButton.checked = true;
+                }
+                document.querySelectorAll('.payment-form-radio-item').forEach(label => {
+                    label.classList.remove('selected');
+                });
+                this.classList.add('selected');
+            });
+        });
+        document.querySelectorAll('.payment-form-radio-items').forEach(item => {
+            item.addEventListener('click', function() {
+                let radioButton = this.previousElementSibling;
+                if (!radioButton.checked) {
+                    radioButton.checked = true;
+                }
+                document.querySelectorAll('.payment-form-radio-items').forEach(label => {
+                    label.classList.remove('selected');
+                });
+                this.classList.add('selected');
+            });
+        });
+    </script>
+
+</div>
+
+</body>
+</html>

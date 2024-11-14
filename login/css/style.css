@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
 
 *{
-  font-family: 'Poppins', sans-serif;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin:0; padding:0;
   box-sizing: border-box;
   outline: none; border:none;
@@ -15,7 +15,7 @@
   align-items: center;
   padding:25px;
   min-height: 100vh;
-  background: linear-gradient(90deg, #2ecc71 60%, #27ae60 40.1%);
+  background: linear-gradient(90deg, #000000 20%, #000000 40.1%);
 }
 
 .container form{
@@ -53,14 +53,16 @@
 
 .container form .row .col .inputBox input{
   width: 100%;
-  border:1px solid #ccc;
+  border:2px solid #ff00d4;
   padding:10px 15px;
   font-size: 15px;
   text-transform: none;
+  border-radius: 100px;
+
 }
 
 .container form .row .col .inputBox input:focus{
-  border:1px solid #000;
+  border:2px solid black;
 }
 
 .container form .row .col .flex{
@@ -75,19 +77,19 @@
 .container form .row .col .inputBox img{
   height: 34px;
   margin-top: 5px;
-  filter: drop-shadow(0 0 1px #000);
+  filter: drop-shadow(0 0 1px #ff00d4);
 }
 
 .container form .submit-btn{
   width: 100%;
   padding:12px;
   font-size: 17px;
-  background: #27ae60;
+  background: black;
   color:#fff;
   margin-top: 5px;
   cursor: pointer;
 }
 
 .container form .submit-btn:hover{
-  background: #2ecc71;
+  background: #ff00d4;
 }
