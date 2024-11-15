@@ -8,15 +8,30 @@
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
+        
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #000000;
-            display: flex;
-            justify-content: right;
-            padding-right: 100px;
-            align-items: center;
-            height: 100vh;
-        }
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #000000;
+        display: flex;
+    justify-content: right;
+    padding-right: 100px;
+    align-items: center;
+    height: 100vh;
+    background-image: url('img/background.png');
+    background-size: cover;
+    background-position: center;
+}
+
+/* Hide background image on devices smaller than 780px */
+@media (max-width: 780px) {
+    body {
+        background-image: none;
+        justify-content: center;
+        padding-right: 10px;
+    }
+}
+
+        
         .login-container {
             background-color: white;
             padding: 40px;
@@ -27,7 +42,7 @@
         .login-container h1 {
             text-align: center;
         }
-        .login-container input[type="tel"],
+        .login-container input[type="number"],
         .login-container input[type="password"] {
             width: 100%;
             padding: 10px;
@@ -121,7 +136,7 @@
         <h1>LOGIN</h1>
         <form id="loginForm">
             <!-- Changed the input type from email to tel (phone number) -->
-            <input type="tel" id="phoneInput" placeholder="Enter your phone number" required>
+            <input type="number" id="phoneInput" placeholder="Enter your phone number" required>
             <input type="password" id="passwordInput" placeholder="Enter password" required>
             <input type="submit" value="Login">  
             <div class="switch-form">
@@ -149,60 +164,12 @@
     </div>
 
     <script>
-        // Updated the object to use phone numbers instead of emails
-        const phoneKeywordPairs = {
-            "0764715368": { keyword: "nawod2020", url: "user/450450450450/450450450450.html" },
-            "0722222222": { keyword: "isuru", url: "20240813_145941.html" },
-            "0733333333": { keyword: "iresha", url: "20240925_183742.html" },
-            "0744444444": { keyword: "sadew", url: "Screenshot_20241002-204549.html" },
-            "0755555555": { keyword: "keyword5", url: "page5.html" },
-            "0766666666": { keyword: "keyword6", url: "page6.html" },
-            "0777777777": { keyword: "keyword7", url: "page7.html" },
-            "0788888888": { keyword: "keyword8", url: "page8.html" },
-            "0799999999": { keyword: "keyword9", url: "page9.html" },
-            "0800000000": { keyword: "keyword10", url: "page10.html" }
-        };
+    document.write(atob("PHNjcmlwdD4gICAgICAgIC8vIFVwZGF0ZWQgdGhlIG9iamVjdCB0byB1c2UgcGhvbmUgbnVtYmVycyBpbnN0ZWFkIG9mIGVtYWlscwogICAgICAgIGNvbnN0IHBob25lS2V5d29yZFBhaXJzID0gewogICAgICAgICAgICAiMDc2NDcxNTM2OCI6IHsga2V5d29yZDogIm5hd29kMjAyMCIsIHVybDogInVzZXIvNDUwNDUwNDUwNDUwLzQ1MDQ1MDQ1MDQ1MC5odG1sIiB9LAogICAgICAgICAgICAiMDcyMjIyMjIyMiI6IHsga2V5d29yZDogImlzdXJ1IiwgdXJsOiAiMjAyNDA4MTNfMTQ1OTQxLmh0bWwiIH0sCiAgICAgICAgICAgICIwNzMzMzMzMzMzIjogeyBrZXl3b3JkOiAiaXJlc2hhIiwgdXJsOiAiMjAyNDA5MjVfMTgzNzQyLmh0bWwiIH0sCiAgICAgICAgICAgICIwNzQ0NDQ0NDQ0IjogeyBrZXl3b3JkOiAic2FkZXciLCB1cmw6ICJTY3JlZW5zaG90XzIwMjQxMDAyLTIwNDU0OS5odG1sIiB9LAogICAgICAgICAgICAiMDc1NTU1NTU1NSI6IHsga2V5d29yZDogImtleXdvcmQ1IiwgdXJsOiAicGFnZTUuaHRtbCIgfSwKICAgICAgICAgICAgIjA3NjY2NjY2NjYiOiB7IGtleXdvcmQ6ICJrZXl3b3JkNiIsIHVybDogInBhZ2U2Lmh0bWwiIH0sCiAgICAgICAgICAgICIwNzc3Nzc3Nzc3IjogeyBrZXl3b3JkOiAia2V5d29yZDciLCB1cmw6ICJwYWdlNy5odG1sIiB9LAogICAgICAgICAgICAiMDc4ODg4ODg4OCI6IHsga2V5d29yZDogImtleXdvcmQ4IiwgdXJsOiAicGFnZTguaHRtbCIgfSwKICAgICAgICAgICAgIjA3OTk5OTk5OTkiOiB7IGtleXdvcmQ6ICJrZXl3b3JkOSIsIHVybDogInBhZ2U5Lmh0bWwiIH0sCiAgICAgICAgICAgICIwODAwMDAwMDAwIjogeyBrZXl3b3JkOiAia2V5d29yZDEwIiwgdXJsOiAicGFnZTEwLmh0bWwiIH0KICAgICAgICB9OwoKICAgICAgICBkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgibG9naW5Gb3JtIikuYWRkRXZlbnRMaXN0ZW5lcigic3VibWl0IiwgZnVuY3Rpb24oZXZlbnQpIHsKICAgICAgICAgICAgZXZlbnQucHJldmVudERlZmF1bHQoKTsgCgogICAgICAgICAgICBjb25zdCBwaG9uZSA9IGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCJwaG9uZUlucHV0IikudmFsdWU7CiAgICAgICAgICAgIGNvbnN0IHBhc3N3b3JkID0gZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoInBhc3N3b3JkSW5wdXQiKS52YWx1ZTsKCiAgICAgICAgICAgIC8vIFVwZGF0ZWQgcGhvbmUgbnVtYmVyIHZhbGlkYXRpb24gcmVnZXgKICAgICAgICAgICAgY29uc3QgcGhvbmVSZWdleCA9IC9eWzAtOV17MTB9JC87CgogICAgICAgICAgICBpZiAoIXBob25lUmVnZXgudGVzdChwaG9uZSkpIHsKICAgICAgICAgICAgICAgIGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCJlcnJvck1lc3NhZ2UiKS50ZXh0Q29udGVudCA9ICJQbGVhc2UgZW50ZXIgYSB2YWxpZCBwaG9uZSBudW1iZXIuIjsKICAgICAgICAgICAgICAgIHJldHVybjsKICAgICAgICAgICAgfQoKICAgICAgICAgICAgaWYgKHBob25lS2V5d29yZFBhaXJzLmhhc093blByb3BlcnR5KHBob25lKSkgewogICAgICAgICAgICAgICAgaWYgKHBob25lS2V5d29yZFBhaXJzW3Bob25lXS5rZXl3b3JkID09PSBwYXNzd29yZCkgewogICAgICAgICAgICAgICAgICAgIHdpbmRvdy5sb2NhdGlvbi5ocmVmID0gcGhvbmVLZXl3b3JkUGFpcnNbcGhvbmVdLnVybDsKICAgICAgICAgICAgICAgIH0gZWxzZSB7CiAgICAgICAgICAgICAgICAgICAgZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoImVycm9yTWVzc2FnZSIpLnRleHRDb250ZW50ID0gIkluY29ycmVjdCBQYXNzd29yZCBmb3IgdGhpcyBwaG9uZSBudW1iZXIuIjsKICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgfSBlbHNlIHsKICAgICAgICAgICAgICAgIGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCJlcnJvck1lc3NhZ2UiKS50ZXh0Q29udGVudCA9ICJQaG9uZSBudW1iZXIgYW5kIHBhc3N3b3JkIGRvIG5vdCBtYXRjaC4iOwogICAgICAgICAgICB9CiAgICAgICAgfSk7CgogICAgICAgIC8vIGljb24gdGVsZWdyYW0KICAgICAgICBmdW5jdGlvbiB0b2dnbGVEcm9wZG93bigpIHsKICAgICAgICAgICAgY29uc3QgZHJvcGRvd24gPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKCcuZHJvcGRvd24nKTsKICAgICAgICAgICAgZHJvcGRvd24uY2xhc3NMaXN0LnRvZ2dsZSgnc2hvdycpOwogICAgICAgIH0KCiAgICAgICAgd2luZG93Lm9uY2xpY2sgPSBmdW5jdGlvbihldmVudCkgewogICAgICAgICAgICBpZiAoIWV2ZW50LnRhcmdldC5tYXRjaGVzKCcubWFpbi1pY29uJykpIHsKICAgICAgICAgICAgICAgIGNvbnN0IGRyb3Bkb3duID0gZG9jdW1lbnQucXVlcnlTZWxlY3RvcignLmRyb3Bkb3duJyk7CiAgICAgICAgICAgICAgICBpZiAoZHJvcGRvd24uY2xhc3NMaXN0LmNvbnRhaW5zKCdzaG93JykpIHsKICAgICAgICAgICAgICAgICAgICBkcm9wZG93bi5jbGFzc0xpc3QucmVtb3ZlKCdzaG93Jyk7CiAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgIH0KICAgICAgICB9Cjwvc2NyaXB0Pg=="));
 
-        document.getElementById("loginForm").addEventListener("submit", function(event) {
-            event.preventDefault(); 
-
-            const phone = document.getElementById("phoneInput").value;
-            const password = document.getElementById("passwordInput").value;
-
-            // Updated phone number validation regex
-            const phoneRegex = /^[0-9]{10}$/;
-
-            if (!phoneRegex.test(phone)) {
-                document.getElementById("errorMessage").textContent = "Please enter a valid phone number.";
-                return;
-            }
-
-            if (phoneKeywordPairs.hasOwnProperty(phone)) {
-                if (phoneKeywordPairs[phone].keyword === password) {
-                    window.location.href = phoneKeywordPairs[phone].url;
-                } else {
-                    document.getElementById("errorMessage").textContent = "Incorrect Password for this phone number.";
-                }
-            } else {
-                document.getElementById("errorMessage").textContent = "Phone number and password do not match.";
-            }
-        });
-
-        // icon telegram
-        function toggleDropdown() {
-            const dropdown = document.querySelector('.dropdown');
-            dropdown.classList.toggle('show');
-        }
-
-        window.onclick = function(event) {
-            if (!event.target.matches('.main-icon')) {
-                const dropdown = document.querySelector('.dropdown');
-                if (dropdown.classList.contains('show')) {
-                    dropdown.classList.remove('show');
-                }
-            }
-        }
-    </script>
+/* 
+type in text is https://www.base64encode.org
+*/
+</script>
 
 </body>
 </html>
