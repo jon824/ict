@@ -1,0 +1,53 @@
+        // Updated the object to use phone numbers instead of emails
+        const phoneKeywordPairs = {
+            "0764715368": { keyword: "nawod2020", url: "user/450450450450/450450450450.html" },
+            "0722222222": { keyword: "isuru", url: "20240813_145941.html" },
+            "0733333333": { keyword: "iresha", url: "20240925_183742.html" },
+            "0744444444": { keyword: "sadew", url: "Screenshot_20241002-204549.html" },
+            "0755555555": { keyword: "keyword5", url: "page5.html" },
+            "0766666666": { keyword: "keyword6", url: "page6.html" },
+            "0777777777": { keyword: "keyword7", url: "page7.html" },
+            "0788888888": { keyword: "keyword8", url: "page8.html" },
+            "0799999999": { keyword: "keyword9", url: "page9.html" },
+            "0800000000": { keyword: "keyword10", url: "page10.html" }
+        };
+
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault(); 
+
+            const phone = document.getElementById("phoneInput").value;
+            const password = document.getElementById("passwordInput").value;
+
+            // Updated phone number validation regex
+            const phoneRegex = /^[0-9]{10}$/;
+
+            if (!phoneRegex.test(phone)) {
+                document.getElementById("errorMessage").textContent = "Please enter a valid phone number.";
+                return;
+            }
+
+            if (phoneKeywordPairs.hasOwnProperty(phone)) {
+                if (phoneKeywordPairs[phone].keyword === password) {
+                    window.location.href = phoneKeywordPairs[phone].url;
+                } else {
+                    document.getElementById("errorMessage").textContent = "Incorrect Password for this phone number.";
+                }
+            } else {
+                document.getElementById("errorMessage").textContent = "Phone number and password do not match.";
+            }
+        });
+
+        // icon telegram
+        function toggleDropdown() {
+            const dropdown = document.querySelector('.dropdown');
+            dropdown.classList.toggle('show');
+        }
+
+        window.onclick = function(event) {
+            if (!event.target.matches('.main-icon')) {
+                const dropdown = document.querySelector('.dropdown');
+                if (dropdown.classList.contains('show')) {
+                    dropdown.classList.remove('show');
+                }
+            }
+        }

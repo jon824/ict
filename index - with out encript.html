@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        
+        body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #000000;
+        display: flex;
+    justify-content: right;
+    padding-right: 100px;
+    align-items: center;
+    height: 100vh;
+    background-image: url('img/background.png');
+    background-size: cover;
+    background-position: center;
+}
+
+/* Hide background image on devices smaller than 780px */
+@media (max-width: 780px) {
+    body {
+        background-image: none;
+        justify-content: center;
+        padding-right: 10px;
+    }
+}
+
+        
+        .login-container {
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255, 0, 0, 0.1);
+            width: 350px;
+        }
+        .login-container h1 {
+            text-align: center;
+        }
+        .login-container input[type="number"],
+        .login-container input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border: 2px solid #ff00d4;
+            border-radius: 105px;
+        }
+        .login-container input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: black;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .login-container input[type="submit"]:hover {
+            background-color: #ff00d4;
+        }
+        .error-message {
+            color: red;
+            text-align: center;
+            margin-top: 10px;
+        }
+        .switch-form {
+            text-align: center;
+            margin-top: 10px;
+        }
+        /* telegram button */
+        .main-icon {
+            font-size: 30px;
+            color: rgb(0, 174, 255);
+            cursor: pointer;
+            transition: transform 0.3s ease; /* Smooth scaling effect */
+        }
+
+        /* Grow icon on hover */
+        .main-icon:hover {
+            transform: scale(1.5); /* Increase size to 1.5 times */
+        }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 40px;
+            left: 0;
+            background-color: rgb(61, 61, 61);
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .dropdown-content i {
+            font-size: 25px;
+            color: rgb(0, 174, 255);
+            cursor: pointer;
+            display: block;
+            margin: 5px 0;
+            text-align: center;
+        }
+
+        .dropdown.show .dropdown-content {
+            display: block;
+        }            
+        .dropdown .dropdown-content .telegramlink {
+            text-decoration: none;
+        }
+        .telecolor {
+            color: white;
+            text-decoration: none;
+        }
+        @media (max-width: 780px) {
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #000000;
+                display: flex;
+                justify-content: center;
+                padding-right: 10px;
+                align-items: center;
+                height: 100vh;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h1>LOGIN</h1>
+        <form id="loginForm">
+            <!-- Changed the input type from email to tel (phone number) -->
+            <input type="number" id="phoneInput" placeholder="Enter your phone number" required>
+            <input type="password" id="passwordInput" placeholder="Enter password" required>
+            <input type="submit" value="Login">  
+            <div class="switch-form">
+                <p><a href="register.html" id="showRegisterForm" style="text-decoration:none; color:black;">Create a New Account</a></p>
+                <a href="https://youtube.com/@matheeshavsammana?si=4lUBHCfJ6GHJt74_">   <i class="fab fa-youtube main-icon" style="font-size: 25px; color: red;"></i></a>
+                &nbsp; <i class="fab fa-facebook main-icon" style="font-size: 25px; color: blue;"></i>
+                &nbsp; <a href="wa.me/0714803019" > <i class="fab fa-whatsapp main-icon" style="font-size: 25px; text-decoration: none; color: green;" ></i></a>
+                &nbsp;
+                <div class="dropdown">
+                    <!-- Main Telegram Icon -->
+                    <i class="fab fa-telegram main-icon" onclick="toggleDropdown()"></i>
+                    <!-- Dropdown Content with Additional Icons -->
+                    <div class="dropdown-content">
+                        <a class="telegramlink" href="https://web.telegram.org/k/"><i class="fab fa-telegram main-icon" ></i><p class="telecolor"> 2026</p></a> 
+                        <a class="telegramlink" href="https://web.telegram.org/k/"> <i class="fab fa-telegram main-icon"></i><p class="telecolor"> 2025</p></a>
+                        <a class="telegramlink" href="https://web.telegram.org/k/" ><i class="fab fa-telegram main-icon"></i><p class="telecolor"> 2024</p></a>
+                    </div>
+                </div>
+                <p style="text-align: left;"> Need Help ?</p>
+                <p style="text-align: left;"> Phone: 071 480 3019</p>
+                <p style="text-align:left;"> Email: nawoth2020nsk@gmail.com </p>
+            </div>
+            <div id="errorMessage" class="error-message"></div>
+        </form>
+    </div>
+
+    <script>
+        // Updated the object to use phone numbers instead of emails
+        const phoneKeywordPairs = {
+            "0764715368": { keyword: "nawod2020", url: "user/450450450450/450450450450.html" },
+            "0753194020": { keyword: "Sanana@222", url: "user/26002/26002.html" },
+            "0733333333": { keyword: "iresha", url: "user/26003/26003.html" },
+            "0744444444": { keyword: "sadew", url: "user/26004/26004" },
+            "0755555555": { keyword: "keyword5", url: "user/26005/26005" },
+            "0766666666": { keyword: "keyword6", url: "user/26006/26006" },
+            "0777777777": { keyword: "keyword7", url: "user/26007/26007" },
+            "0788888888": { keyword: "keyword8", url: "user/26008/26008" },
+            "0799999999": { keyword: "keyword9", url: "user/26009/26009" },
+            "0800000000": { keyword: "keyword10", url: "user/26010/26010" }
+        };
+
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault(); 
+
+            const phone = document.getElementById("phoneInput").value;
+            const password = document.getElementById("passwordInput").value;
+
+            // Updated phone number validation regex
+            const phoneRegex = /^[0-9]{10}$/;
+
+            if (!phoneRegex.test(phone)) {
+                document.getElementById("errorMessage").textContent = "Please enter a valid phone number.";
+                return;
+            }
+
+            if (phoneKeywordPairs.hasOwnProperty(phone)) {
+                if (phoneKeywordPairs[phone].keyword === password) {
+                    window.location.href = phoneKeywordPairs[phone].url;
+                } else {
+                    document.getElementById("errorMessage").textContent = "Incorrect Password for this phone number.";
+                }
+            } else {
+                document.getElementById("errorMessage").textContent = "Phone number and password do not match.";
+            }
+        });
+
+        // icon telegram
+        function toggleDropdown() {
+            const dropdown = document.querySelector('.dropdown');
+            dropdown.classList.toggle('show');
+        }
+
+        window.onclick = function(event) {
+            if (!event.target.matches('.main-icon')) {
+                const dropdown = document.querySelector('.dropdown');
+                if (dropdown.classList.contains('show')) {
+                    dropdown.classList.remove('show');
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>
