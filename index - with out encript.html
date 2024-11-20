@@ -13,10 +13,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         
-        body {
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        background-color: #000000;
-        display: flex;
+    body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #000000;
+    display: flex;
     justify-content: right;
     padding-right: 100px;
     align-items: center;
@@ -50,22 +50,53 @@
         .login-container input[type="password"] {
             width: 100%;
             padding: 10px;
-            margin: 8px 0;
-            border: 2px solid #ff00d4;
-            border-radius: 105px;
+            margin: 10px 5;
+            border: 2px solid #797979;
+            border-radius: 20px;
         }
-        .login-container input[type="submit"] {
-            width: 100%;
-            padding: 10px;
-            background-color: black;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .login-container input[type="submit"]:hover {
-            background-color: #ff00d4;
-        }
+    
+
+/* CSS */
+ .login-container input[type="submit"] {
+  appearance: none;
+  background-color: #000000;
+  border: 2px solid #1A1A1A;
+  border-radius: 20px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: normal;
+  margin: 0;
+  min-height: 10px;
+  min-width: 0;
+  outline: none;
+  padding: 16px 24px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 60%;
+  will-change: transform;
+}
+
+.login-container input[type="submit"]:disabled {
+  pointer-events: none;
+}
+
+.login-container input[type="submit"]:hover {
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+  transform: translateY(-2px);
+}
+
+.login-container input[type="submit"]:active {
+  box-shadow: none;
+  transform: translateY(0);
+}
         .error-message {
             color: red;
             text-align: center;
@@ -140,9 +171,9 @@
         <h1>LOGIN</h1>
         <form id="loginForm">
             <!-- Changed the input type from email to tel (phone number) -->
-            <input type="number" id="phoneInput" placeholder="Enter your phone number" required>
-            <input type="password" id="passwordInput" placeholder="Enter password" required>
-            <input type="submit" value="Login">  
+             <input type="number" id="phoneInput" placeholder="Enter your phone number" required>
+              <input type="password" id="passwordInput" placeholder="Enter password" required>
+           <center><input type="submit" value="Login">  </center>
             <div class="switch-form">
                 <p><a href="register.html" id="showRegisterForm" style="text-decoration:none; color:black;">Create a New Account</a></p>
                 <a href="https://youtube.com/@matheeshavsammana?si=4lUBHCfJ6GHJt74_">   <i class="fab fa-youtube main-icon" style="font-size: 25px; color: red;"></i></a>
@@ -160,8 +191,9 @@
                     </div>
                 </div>
                 <p style="text-align: left;">   Need Help ?</p>
-                <p style="text-align: left;">   Phone: 071 480 3019</p>
-                <p style="text-align:left;">    Email: nawoth2020nsk@gmail.com </p>
+                <p style="text-align: left;"> Phone:<a href="tel:0764715368" style="text-decoration: none;">
+                                                 071 480 3019</p> </a>
+                <p style="text-align:left;"> Email:<a href="mailto:matheeshasammana@gmail.com" style="text-decoration: none;">    matheeshasammana@gmail.com </p></a>
                 <p style="text-align:left;"> 
                     <a href="mailto:nawoth2020nsk@gmail.com" style="text-decoration: none;">   Powerd By Winmax </a></p>
             </div>

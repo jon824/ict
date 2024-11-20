@@ -26,18 +26,6 @@ body {
     border: 2px solid #ff00d4;
     border-radius: 105px;
 }
-.login-container input[type="submit"] {
-    width: 100%;
-    padding: 10px;
-    background-color: black;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-.login-container input[type="submit"]:hover {
-    background-color: #ff00d4;
-}
 .error-message {
     color: red;
     text-align: center;
