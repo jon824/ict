@@ -29,12 +29,11 @@
     <nav>
         <div class="logo-name">
             <div class="logo-image">
-                <img src="nawod.jpg" alt=""> 
+                <img src="../logo.png" alt=""> 
             </div>
 
-            <span class="logo_name">ICT For Al</span>
+            <span class="logo_name">Ict For A/L</span>
         </div>
-
         <div class="menu-items">
             <ul class="nav-links">
                 <li><a href="#">
@@ -72,65 +71,6 @@
              <i class="uil uil-bars sidebar-toggle"></i>
 
 
-<div class="notification">
-  <!-- Notification Bell Icon -->
-  <i class="uil uil-bell bell"></i>
-
-  <!-- Notification Count -->
-  <div class="notification-count">5</div> <!-- Hardcoded for now -->
-
-  <!-- Notification List -->
-  <ul class="notification-list">
-    <li>Your Account Has been Verified</li>
-    <li>Your Id Verified</li>
-    <li>Your Face Id Verified</li>
-    <li>Your Money Deposit Is Succeed</li>
-    <li>Withdraw Successful</li>
-  </ul>
-</div>
-
-<!-- Add script to handle notification toggle -->
-<script>
-  // Toggle notification list on bell click
-  const bell = document.querySelector('.bell');
-  const notificationList = document.querySelector('.notification-list');
-  const notificationCount = document.querySelector('.notification-count');
-  
-  bell.addEventListener('click', () => {
-    notificationList.classList.toggle('show');
-
-    // Optionally: Reset notification count when clicked
-    notificationCount.textContent = 0;
-    notificationCount.style.display = 'none'; // Hide the count when all notifications are viewed
-  });
-
-  // Optional: Hide the notification list if clicked outside
-  window.addEventListener('click', (e) => {
-    if (!bell.contains(e.target) && !notificationList.contains(e.target)) {
-      notificationList.classList.remove('show');
-    }
-  });
-
-  // Set the notification count dynamically based on the number of notifications
-  function updateNotificationCount() {
-    const notifications = document.querySelectorAll('.notification-list li');
-    const count = notifications.length;
-
-    // Update the notification count display
-    notificationCount.textContent = count;
-
-    // If there are no notifications, hide the count badge
-    if (count > 0) {
-      notificationCount.style.display = 'flex';
-    } else {
-      notificationCount.style.display = 'none';
-    }
-  }
-
-  // Call this function to initially set the notification count
-  updateNotificationCount();
-</script>
-
             </div>
 
         <div class="dash-content">
@@ -149,44 +89,18 @@
             <h6 class="section-title bg-white text-center px-3">  Lesson</h6>
         </div>
         <div class="row g-4 py-2">
-            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                <div class="course-item shadow">
-                    <div class="position-relative overflow-hidden text-light image">
-                        <img class="img-fluid" src="../../img/profile.png" alt="">
-                        <div style="position:absolute;top: 15px;left: 16px; font-size:12px; border-radius:3px; background-color:#00ff22;"
-                            class="px-2 py-1 fw-bold text-uppercase">PAID</div>
-
-                    </div>
-                    <div class="p-2 pb-0">
-
-                        <h5 class="mb-1"><a href="../../Face/index.html" class="text-dark">
-                          <span class="textss">
-                        Upload your Profile Image
-                          </a> </h5></span>
-                    </div>
-                    <div class="d-flex">
-                        
-                    </div>
-                    <div class="d-flex">
-                        <small class="flex-fill text-left p-2 px-2"><i class="fa fa-clock me-2"></i>2.0
-                            H</small>
-                        <small class="py-1 px-2 fw-bold fs-6 text-center"><i class="fas fa-rupee-sign"></i> 10</small>
-                        <small class=" text-primary py-1 px-2 fw-bold fs-6" style="float:right;"><a href="../../Face/index.html">Upload
-                                 </a><i class="fa fa-chevron-right me-2 fs-10"></i></small>
-                    </div>
-                </div>
-            </div>
+          
             <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
               <div class="course-item shadow">
                   <div class="position-relative overflow-hidden text-light image">
                       <img class="img-fluid" src="../../img/course-1.jpg" alt="">
-                      <div style="position:absolute;top: 15px;left: 16px; font-size:12px; border-radius:3px; background-color:#00ff22;"
-                          class="px-2 py-1 fw-bold text-uppercase">PAID</div>
+                      <div style="position:absolute;top: 15px;left: 16px; font-size:12px; border-radius:3px; background-color:#ff0000;"
+                          class="px-2 py-1 fw-bold text-uppercase">FREE</div>
 
                   </div>
                   <div class="p-2 pb-0">
 
-                      <h5 class="mb-1"><a href="../../cources/26ol/1/01-month.html" class="text-dark">January</a> </h5>
+                      <h5 class="mb-1"><a href="../../cources/26ol/1/01-month.html" class="text-dark">December</a> </h5>
                   </div>
                   <div class="d-flex">
                       

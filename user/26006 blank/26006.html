@@ -29,10 +29,10 @@
     <nav>
         <div class="logo-name">
             <div class="logo-image">
-                <img src="nawod.jpg" alt=""> 
+                <img src="../logo.png" alt=""> 
             </div>
 
-            <span class="logo_name">ICT For Al</span>
+            <span class="logo_name">Ict For A/L</span>
         </div>
 
         <div class="menu-items">
@@ -70,66 +70,6 @@
 
             <div class="top">
              <i class="uil uil-bars sidebar-toggle"></i>
-
-
-<div class="notification">
-  <!-- Notification Bell Icon -->
-  <i class="uil uil-bell bell"></i>
-
-  <!-- Notification Count -->
-  <div class="notification-count">5</div> <!-- Hardcoded for now -->
-
-  <!-- Notification List -->
-  <ul class="notification-list">
-    <li>Your Account Has been Verified</li>
-    <li>Your Id Verified</li>
-    <li>Your Face Id Verified</li>
-    <li>Your Money Deposit Is Succeed</li>
-    <li>Withdraw Successful</li>
-  </ul>
-</div>
-
-<!-- Add script to handle notification toggle -->
-<script>
-  // Toggle notification list on bell click
-  const bell = document.querySelector('.bell');
-  const notificationList = document.querySelector('.notification-list');
-  const notificationCount = document.querySelector('.notification-count');
-  
-  bell.addEventListener('click', () => {
-    notificationList.classList.toggle('show');
-
-    // Optionally: Reset notification count when clicked
-    notificationCount.textContent = 0;
-    notificationCount.style.display = 'none'; // Hide the count when all notifications are viewed
-  });
-
-  // Optional: Hide the notification list if clicked outside
-  window.addEventListener('click', (e) => {
-    if (!bell.contains(e.target) && !notificationList.contains(e.target)) {
-      notificationList.classList.remove('show');
-    }
-  });
-
-  // Set the notification count dynamically based on the number of notifications
-  function updateNotificationCount() {
-    const notifications = document.querySelectorAll('.notification-list li');
-    const count = notifications.length;
-
-    // Update the notification count display
-    notificationCount.textContent = count;
-
-    // If there are no notifications, hide the count badge
-    if (count > 0) {
-      notificationCount.style.display = 'flex';
-    } else {
-      notificationCount.style.display = 'none';
-    }
-  }
-
-  // Call this function to initially set the notification count
-  updateNotificationCount();
-</script>
 
             </div>
 
